@@ -17,6 +17,9 @@ module.exports = {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-seri'],
+      },
+      fontSize: {
+        'title': '2.5rem'
       }
     },
   },
