@@ -1,14 +1,8 @@
-import React from 'react';
-
-import { useFetch } from './hooks/useFetch';
-
+// tailwind
 import './index.css'
-import { Repositories } from './components/Repositories';
 
-type Repository = {
-  name: string,
-  description: string
-}
+// components
+import { Repositories } from './components/Repositories';
 
 function App() {
   return (
