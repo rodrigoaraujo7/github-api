@@ -18,16 +18,19 @@ export const Repositories = () => {
   return (
     <section className="w-2/4">
       <Title center={true} className="m-8">Repository List</Title>
-      <ul className="flex flex-wrap justify-between gap-7 marker:text-primaryColor text-xl list-outside list-disc mx-11">
-        {repositories?.map((repo, index) => (
-          <li key={index} className="w-1/4">
-            <a href={repo.html_url} target="blank" className="font-[inter] font-medium text-xl hover:underline cursor-pointer">
-              {repo.name}
-            </a>
-            <p className="font-[poppins] font-regular text-sm text-gray500">{repo.description}</p>
-          </li>
-        ))}
-      </ul>
+      {isFetching && <Title center={true}>Loading ...</Title>}
+      {error ? (<Title center={true} className="underline">User not found! 🤕</Title>) : (
+        <ul className="flex flex-wrap justify-between gap-10 marker:text-primaryColor text-xl list-outside list-disc mx-11">
+          {repositories?.map((repo, index) => (
+            <li key={index} className="w-1/4">
+              <a href={repo.html_url} target="blank" className="font-[inter] font-medium text-xl hover:underline cursor-pointer">
+                {repo.name}
+              </a>
+              <p className="font-[poppins] font-regular text-sm text-gray500">{repo.description}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   )
 }
