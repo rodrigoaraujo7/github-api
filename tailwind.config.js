@@ -13,6 +13,7 @@ module.exports = {
         'gray300': '#C0C0C0',
         'white': '#ffffff',
         'primaryColor': '#444CE7',
+        'secondaryColor': '#CF5085',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

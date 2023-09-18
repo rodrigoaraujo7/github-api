@@ -2,7 +2,7 @@
 import './index.css'
 
 // components
-import { Repositories } from './components/Repositories';
+import { Repositories } from './components/GithubData'
 
 function App() {
   return (

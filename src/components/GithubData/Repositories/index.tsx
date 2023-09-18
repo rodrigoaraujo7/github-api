@@ -1,6 +1,6 @@
-import { Title } from "../Title"
+import { Title } from "../../Title"
 
-import { useFetch } from "../../hooks/useFetch"
+import { useFetch } from "../../../hooks/useFetch"
 
 type Repository = {
   name: string,
@@ -20,7 +20,7 @@ export const Repositories = () => {
       <Title center={true} className="m-8">Repository List</Title>
       {isFetching && <Title center={true}>Loading ...</Title>}
       {error ? (<Title center={true} className="underline">User not found! 🤕</Title>) : (
-        <ul className="flex flex-wrap justify-between gap-10 marker:text-primaryColor text-xl list-outside list-disc mx-11">
+        <ul className="flex flex-wrap justify-between gap-10 marker:text-secondaryColor text-xl list-outside list-disc mx-11">
           {repositories?.map((repo, index) => (
             <li key={index} className="w-1/4">
               <a href={repo.html_url} target="blank" className="font-[inter] font-medium text-xl hover:underline cursor-pointer">
