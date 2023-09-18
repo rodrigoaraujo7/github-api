@@ -16,7 +16,7 @@ export const Repositories = () => {
   } = useFetch<Repository[]>('users/rodrigoaraujo7/repos')
 
   return (
-    <section className="w-2/4">
+    <section className="w-2/4 border-t border-gray700">
       <Title center={true} className="m-8">Repository List</Title>
       {isFetching && <Title center={true}>Loading ...</Title>}
       {error ? (<Title center={true} className="underline">User not found! 🤕</Title>) : (
