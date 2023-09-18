@@ -1,5 +1,5 @@
 interface ITitle {
-  children: string,
+  children: string | undefined,
   center: boolean,
   className?: string
 }

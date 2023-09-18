@@ -1,7 +1,7 @@
 import { Repositories } from "./Repositories";
-import { UserData } from "./UserData";
+import { UserProfile } from "./UserData";
 
 export {
   Repositories,
-  UserData
+  UserProfile
 }

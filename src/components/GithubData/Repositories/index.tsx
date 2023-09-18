@@ -2,22 +2,26 @@ import { Title } from "../../Title"
 
 import { useFetch } from "../../../hooks/useFetch"
 
-type Repository = {
+type IRepositoryProps = {
+  username: string
+}
+
+interface Repository {
   name: string,
   description: string,
   html_url: string
 }
 
-export const Repositories = () => {
+export const Repositories = ({ username }: IRepositoryProps) => {
   const {
     data: repositories,
     error,
     isFetching
-  } = useFetch<Repository[]>('users/rodrigoaraujo7/repos')
+  } = useFetch<Repository[]>(`users/${username}/repos`)
 
   return (
     <section className="w-2/4 border-t border-gray700">
-      <Title center={true} className="m-8">Repository List</Title>
+      <Title center={true} className="my-11">Repository List</Title>
       {isFetching && <Title center={true}>Loading ...</Title>}
       {error ? (<Title center={true} className="underline">User not found! 🤕</Title>) : (
         <ul className="flex flex-wrap justify-between gap-10 marker:text-secondaryColor text-xl list-outside list-disc mx-11">

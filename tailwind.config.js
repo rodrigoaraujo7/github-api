@@ -21,6 +21,9 @@ module.exports = {
       },
       fontSize: {
         'title': '2.5rem'
+      },
+      boxShadow: {
+        'whiteShadow': '0 5px 35px 0 rgba(44, 44, 44, .85)',
       }
     },
   },
