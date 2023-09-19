@@ -14,7 +14,6 @@ export const useFetch = <T = unknown>(url: string) => {
     api.get(url)
       .then(response => {
         setData(response.data)
-        // console.log(response.data)
       })
       .catch(err => {
         setError(true)

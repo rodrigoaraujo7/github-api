@@ -8,7 +8,7 @@ import { Title } from '../../Title'
 import { useFetch } from "../../../hooks/useFetch"
 
 type UserDataProps = {
-  username: string
+  username: string | undefined
 }
 interface UserData {
   name: string,

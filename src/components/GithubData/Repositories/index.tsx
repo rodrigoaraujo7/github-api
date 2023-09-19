@@ -3,7 +3,7 @@ import { Title } from "../../Title"
 import { useFetch } from "../../../hooks/useFetch"
 
 type IRepositoryProps = {
-  username: string
+  username: string | undefined
 }
 
 interface Repository {
