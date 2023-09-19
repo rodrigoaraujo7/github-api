@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         'black': '#000000',
-        'grey900': '#161616',
+        'gray900': '#161616',
         'gray700': '#454545',
         'gray500': '#626262',
         'gray300': '#C0C0C0',
@@ -24,6 +24,7 @@ module.exports = {
       },
       boxShadow: {
         'whiteShadow': '0 5px 35px 0 rgba(44, 44, 44, .85)',
+        'submitShadow': '0 0 25px 0 rgba(255, 255, 255, .20)',
       }
     },
   },
