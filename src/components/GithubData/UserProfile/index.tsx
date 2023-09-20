@@ -5,6 +5,7 @@ import locationPin from '../../../utils/svg/location-pin.svg'
 import { Title } from '../../Title'
 
 // hooks
+import { useState, useEffect } from 'react'
 import { useFetch } from "../../../hooks/useFetch"
 
 type UserDataProps = {
@@ -29,21 +30,24 @@ export const UserProfile = ({ username }: UserDataProps) => {
 
   return (
     <section className='w-2/4 my-11'>
-      {isFetching && <Title center={true}>Loading ...</Title>}
-      {error ? (<Title center={true} className="underline">User not found! 🤕</Title>) : (
+      {isFetching ? <Title center={true}>Loading ...</Title> : (
         <>
-          {userPropsToArray?.map((user, index) => (
-            <div key={index} className='flex gap-5'>
-              <img src={user?.avatar_url} alt="" className='w-32 h-32 rounded-md grayscale shadow-whiteShadow' />
-              <div>
-                <Title center={false}>{user?.name}</Title>
-                <h2 className="text-gray500 font-poppins text-base font-normal">{user?.bio}</h2>
-                <p className="text-white font-poppins text-base font-medium flex gap-1 mt-3">
-                  <img src={locationPin} alt="" />{user?.location}
-                </p>
-              </div>
-            </div>
-          ))}
+          {error ? (<Title center={true} className="underline">User not found! 🤕</Title>) : (
+            <>
+              {userPropsToArray?.map((user, index) => (
+                <div key={index} className='flex gap-5'>
+                  <img src={user?.avatar_url} alt="" className='w-32 h-32 rounded-md grayscale shadow-whiteShadow' />
+                  <div>
+                    <Title center={false}>{user?.name}</Title>
+                    <h2 className="text-gray500 font-poppins text-base font-normal">{user?.bio}</h2>
+                    <p className="text-white font-poppins text-base font-medium flex gap-1 mt-3">
+                      <img src={locationPin} alt="" />{user?.location}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </>
       )}
     </section>

@@ -1,7 +1,7 @@
 // hooks
 import {
   useState,
-  useRef
+  useRef,
 } from 'react'
 
 // components
@@ -17,15 +17,14 @@ import './index.css'
 // utils
 import doubleArrowRight from './utils/svg/double-arrow-right.svg'
 
-
 function App() {
-  const [username, setUsername] = useState('')
+  const [username, setUsername] = useState<string>('')
 
   const usernameInput = useRef<HTMLInputElement>(null);
 
   const submitUsername = () => {
     if (usernameInput.current != null) {
-      setUsername(usernameInput.current.value);
+      setUsername(usernameInput.current.value)
     }
   }
 
